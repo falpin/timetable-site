@@ -1,0 +1,33 @@
+@import url('variables.css');
+
+@media (min-width: 1025px) {
+    .line {
+        width: 1px;
+        height: 50px;
+        background-color: var(--green);
+        margin: 0 20px;
+    }
+
+    br {
+        display: none;
+    }
+
+    .week__text {
+        padding: 0 30px;
+    }
+
+    .week__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .week__timetable {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
