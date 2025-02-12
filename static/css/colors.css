@@ -1,7 +1,8 @@
 :root {
 	--gray-blue-light: #E0E5EC;
 	--gray-blue-dark: #2C2F33;
-	--gray-light: #CCCCCC;
+	--gray-light: #333333;
+	--gray-dark: #CCCCCC;
 	--white-light: #FFFFFF;
 	--black-dark: #000000;
 	--transparent-black-light: rgba(0, 0, 0, 0.1);
@@ -38,7 +39,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-main: var(--gray-blue-dark);
-    --text-color: var(--gray-light);
+    --text-color: var(--gray-dark);
     --bg-container: var(--black-dark);
     --transparent: var(--transparent-white-dark);
     --purple: var(--purple-dark);
