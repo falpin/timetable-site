@@ -1,0 +1,46 @@
+@import url('colors.css');
+
+
+@media (min-width: 600px) and (max-width: 900px)
+{
+    .container {
+        width: 100%;
+    }
+
+    .home h1 {  
+        font-size: 24px;
+    }
+
+    .home a {
+        width: 300px;
+    }
+    
+    .schedule-main {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 35px 35px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+    .container {
+        width: 100%;
+    }
+
+    .home h1 {  
+        font-size: 24px;
+    }
+
+    .home a {
+        width: 300px;
+    }
+
+    .schedule-main {
+        max-width: 900px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        height: 100vh;
+        align-content: center;
+        justify-content: center; 
+    }
+
+}

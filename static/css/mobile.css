@@ -1,0 +1,41 @@
+@import url('colors.css');
+
+@media (min-width: 320px) and (max-width: 590px) {
+	.container {
+	    width: 90%;
+	}
+
+	.home h1 {  
+	    font-size: 20px;
+	}
+
+	.home a {
+	    width: 230px;
+	}
+
+	.schedule-main {
+	    grid-template-columns: 1fr;
+	    min-width: 200px;
+	    margin: 15px 15px;
+	    min-height: 100%;
+	}
+
+	.day-block > h2 {
+	    font-size: 14px;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 599px) {
+	.home a {
+	    width: 300px;
+	}
+
+	.schedule-main {
+	    margin: 25px 25px;
+	}
+
+	.day-block > h2 {
+	    font-size: 16px;
+	}
+}
+

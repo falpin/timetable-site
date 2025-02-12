@@ -1,0 +1,51 @@
+:root {
+	--gray-blue-light: #E0E5EC;
+	--gray-blue-dark: #2C2F33;
+	--gray-light: #CCCCCC;
+	--white-light: #FFFFFF;
+	--black-dark: #000000;
+	--transparent-black-light: rgba(0, 0, 0, 0.1);
+	--transparent-white-dark: rgba(255, 255, 255, 0.1);
+	--purple-light: #5E4F9B;
+	--purple-dark: #7A6BB5;
+	--dark-purple-light: #4A3D7C;
+	--dark-purple-dark: #5E4F9B;
+	--background-light: #F8F9FA;
+	--background-dark: #1E1E1E; 
+	--border-light: #E0E0E0;
+	--border-dark: #444444;
+	--shadow-color-light: rgba(0, 0, 0, 0.15);
+	--shadow-color-dark: rgba(255, 255, 255, 0.15);
+	--light-gray-light: #666666;
+	--light-gray-dark: #999999;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-main: var(--gray-blue-light);
+    --text-color: var(--gray-light);
+    --bg-container: var(--white-light);
+    --transparent: var(--transparent-black-light);
+    --purple: var(--purple-light);
+    --light-gray: var(--light-gray-light);
+    --dark-purple: var(--dark-purple-light);
+    --background: var(--background-light);
+    --border: var(--border-light);
+    --shadow-color: var(--shadow-color-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: var(--gray-blue-dark);
+    --text-color: var(--gray-light);
+    --bg-container: var(--black-dark);
+    --transparent: var(--transparent-white-dark);
+    --purple: var(--purple-dark);
+    --light-gray: var(--light-gray-dark);
+    --dark-purple: var(--dark-purple-dark);
+    --background: var(--background-dark);
+    --border: var(--border-dark);
+    --shadow-color: var(--shadow-color-dark);
+  }
+}
