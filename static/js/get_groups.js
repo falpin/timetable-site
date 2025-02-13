@@ -4,7 +4,7 @@ async function fetchData() {
     const complex = decodedUrl.split('/').pop();
 
     try {
-        const response = await fetch('http://falpin.ru/api/get_groups');
+        const response = await fetch('https://falpin.ru/api/get_groups');
         if (!response.ok) {
             throw new Error('Ошибка при запросе к API');
         }
