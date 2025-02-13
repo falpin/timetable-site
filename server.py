@@ -1,4 +1,12 @@
 from flask import Flask, render_template
+import api
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+Blueprint = api.Blueprint
+app.register_blueprint(Blueprint)
+
 
 app = Flask(__name__)
 
