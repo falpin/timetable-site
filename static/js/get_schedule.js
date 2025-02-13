@@ -27,15 +27,16 @@ async function postData() {
 
 function displaySchedule(schedule) {
     const main = document.querySelector('main');
-    main.classList.add('schedule-main');
     main.innerHTML = ''; // Очищаем main перед вставкой новых данных
+    const section = document.createElement('section');
+    main.appendChild(section);
 
     for (const date in schedule) {
         const daySchedule = schedule[date];
         const dayBlock = document.createElement('div');
-        dayBlock.classList.add('day-block');
+        dayBlock.classList.add('container');
         
-        const dateHeader = document.createElement('h2');
+        const dateHeader = document.createElement('h4');
         dateHeader.textContent = date;
         dayBlock.appendChild(dateHeader);
 
@@ -97,7 +98,8 @@ function displaySchedule(schedule) {
             dayBlock.appendChild(lessonBlock);
         }
 
-        main.appendChild(dayBlock);
+        section.appendChild(dayBlock);
+        main.appendChild(section);
     }
 }
 

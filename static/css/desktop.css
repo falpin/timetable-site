@@ -1,10 +1,6 @@
 @import url('colors.css');
 
 @media (min-width: 1025px) {
-    .container {
-        max-width: 400px;
-        width: 100%;
-    }
 
     .home h1 {  
         font-size: 24px;

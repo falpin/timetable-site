@@ -1,11 +1,11 @@
 from flask import Flask, render_template
-import api
-from flask_cors import CORS
+# import api
+# from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
-Blueprint = api.Blueprint
-app.register_blueprint(Blueprint)
+# CORS(app)
+# Blueprint = api.Blueprint
+# app.register_blueprint(Blueprint)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -20,4 +20,5 @@ def schedule(group):
     return render_template('schedule.html')
 
 
-app.run(debug=False, port=80, host="0.0.0.0")
+# app.run(debug=True, port=5000, host="0.0.0.0")
+app.run(debug=True, port=5000)

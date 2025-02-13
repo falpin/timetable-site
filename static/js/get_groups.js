@@ -3,6 +3,9 @@ async function fetchData() {
     const decodedUrl = decodeURIComponent(currentUrl);
     const complex = decodedUrl.split('/').pop();
 
+    const main = document.querySelector('main');
+    main.innerHTML = '';
+
     try {
         const response = await fetch('https://falpin.ru/api/get_groups');
         if (!response.ok) {
@@ -17,10 +20,6 @@ async function fetchData() {
                 acc[key] = value;
                 return acc;
             }, {});
-
-        // Создаем контейнер для курсов
-        const container = document.createElement('div');
-        container.className = 'courses_container';
 
         // Группируем данные по курсам
         const courses = {};
@@ -42,7 +41,7 @@ async function fetchData() {
         // Создаем блоки для каждого курса
         for (const [courseName, groups] of sortedCourses) {
             const courseBlock = document.createElement('div');
-            courseBlock.className = 'course';
+            courseBlock.className = 'container';
 
             // Заголовок курса
             const courseHeader = document.createElement('h2');
@@ -63,11 +62,10 @@ async function fetchData() {
             }
 
             courseBlock.appendChild(groupsContainer);
-            container.appendChild(courseBlock);
+            main.appendChild(courseBlock);
+            // container.appendChild(courseBlock);
         }
 
-        // Вставляем контейнер с курсами на страницу
-        document.body.appendChild(container);
 
     } catch (error) {
         console.error('Ошибка:', error);
