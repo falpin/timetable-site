@@ -4,7 +4,7 @@
 	--gray-light: #333333;
 	--gray-dark: #CCCCCC;
 	--white-light: #FFFFFF;
-	--black-dark: #000000;
+	--black-dark: #202020;
 	--transparent-black-light: rgba(0, 0, 0, 0.1);
 	--transparent-white-dark: rgba(255, 255, 255, 0.1);
 	--purple-light: #5E4F9B;
@@ -12,7 +12,7 @@
 	--dark-purple-light: #4A3D7C;
 	--dark-purple-dark: #5E4F9B;
 	--background-light: #F8F9FA;
-	--background-dark: #1E1E1E; 
+	--background-dark: #303030; 
 	--border-light: #E0E0E0;
 	--border-dark: #444444;
 	--shadow-color-light: rgba(0, 0, 0, 0.15);
