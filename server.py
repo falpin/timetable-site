@@ -15,4 +15,4 @@ def schedule(group):
     return render_template('schedule.html')
 
 
-app.run(debug=True, port=5000)
+app.run(debug=False, port=80, host="0.0.0.0")
