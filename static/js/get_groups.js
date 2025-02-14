@@ -13,15 +13,15 @@ async function fetchData() {
         }
         const data = await response.json();
 
-        // Фильтруем данные по complex
+    // Фильтруем данные по complex
         const data_complex = Object.entries(data)
-            .filter(([key, value]) => value.complex === complex)
-            .reduce((acc, [key, value]) => {
-                acc[key] = value;
-                return acc;
-            }, {});
+        .filter(([key, value]) => value.complex === complex)
+        .reduce((acc, [key, value]) => {
+            acc[key] = value;
+            return acc;
+        }, {});
 
-        // Группируем данные по курсам
+    // Группируем данные по курсам
         const courses = {};
         for (const [groupName, groupData] of Object.entries(data_complex)) {
             const course = groupData.course;
@@ -31,12 +31,21 @@ async function fetchData() {
             courses[course].push({ groupName, url: groupData.url });
         }
 
-        // Сортируем курсы по порядку (1 курс, 2 курс, ..., 5 курс)
+    // Сортируем курсы по порядку (1 курс, 2 курс, ..., 5 курс)
         const sortedCourses = Object.entries(courses).sort((a, b) => {
             const courseNumberA = parseInt(a[0].match(/\d+/)[0], 10);
             const courseNumberB = parseInt(b[0].match(/\d+/)[0], 10);
             return courseNumberA - courseNumberB;
         });
+
+    // Сортируем группы внутри каждого курса по первой цифре после названия группы
+        for (const [course, groups] of sortedCourses) {
+            groups.sort((a, b) => {
+                const numberA = parseInt(a.groupName.match(/-(\d+)-/)[1], 10);
+                const numberB = parseInt(b.groupName.match(/-(\d+)-/)[1], 10);
+                return numberA - numberB;
+            });
+        }
 
         // Создаем блоки для каждого курса
         for (const [courseName, groups] of sortedCourses) {
