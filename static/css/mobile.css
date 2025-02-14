@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+	#schedule .container{
+		min-width: 90%;
+	}
+
+	.groups{
+	}
+	.groups a{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		padding: 12px 10px;
+		white-space: nowrap;
+	}
+
+}
