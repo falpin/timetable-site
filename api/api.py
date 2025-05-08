@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, Blueprint, request, abort
 from api import config
-from scripts import *
+from api.scripts import *
 from flask_cors import CORS  # Импортируем CORS
 
 VERSION = "1.1.2"

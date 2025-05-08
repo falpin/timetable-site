@@ -3,7 +3,7 @@ from datetime import datetime
 import pytz
 import os
 import re
-from use_db import *
+from api.use_db import *
 
 
 def now_time():  # Получение текущего времени по МСК
