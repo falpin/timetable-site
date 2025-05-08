@@ -1,10 +1,7 @@
 from flask import Flask, jsonify, Blueprint, request, abort
-import config
+from api import config
 from scripts import *
 from flask_cors import CORS  # Импортируем CORS
-
-if __name__ != '__main__':
-    CORS(app)  # Разрешаем CORS для всех доменов
 
 VERSION = "1.1.2"
 
