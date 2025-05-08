@@ -6,7 +6,7 @@ async function postData() {
         const dataToSend = {
             group: group
         };
-        const response = await fetch('https://falpin.ru/api/get_schedule', {
+        const response = await fetch('https://timetable.falpin.ru/api/get_schedule', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

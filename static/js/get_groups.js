@@ -7,7 +7,7 @@ async function fetchData() {
     main.innerHTML = '';
 
     try {
-        const response = await fetch('https://falpin.ru/api/get_groups');
+        const response = await fetch('https://timetable.falpin.ru/api/get_groups');
         if (!response.ok) {
             throw new Error('Ошибка при запросе к API');
         }
