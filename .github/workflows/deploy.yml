@@ -20,6 +20,3 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: ${{ secrets.DEPLOY_SCRIPT_PATH }}
-          # Дополнительные опции для отладки
-          debug: true
-          timeout: 30s
