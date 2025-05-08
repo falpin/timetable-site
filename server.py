@@ -1,11 +1,24 @@
 from flask import Flask, render_template
-import api
 from flask_cors import CORS
+import importlib
+import sys
+LIBRARY_NAME = "timetable-api"
+
+VERSION = "1.0.1"
+print(f"Версия: {VERSION}")
 
 app = Flask(__name__)
 CORS(app)
-Blueprint = api.Blueprint
-app.register_blueprint(Blueprint)
+
+try:
+    timetable_api = importlib.import_module(LIBRARY_NAME.replace("-", "_"))  # Заменяем тире на подчёркивание
+    print(f"Библиотека '{LIBRARY_NAME}' успешно импортирована!")
+    Blueprint = api.Blueprint
+    app.register_blueprint(Blueprint)
+    
+except ImportError:
+    print(f"Ошибка: библиотека '{LIBRARY_NAME}' не найдена!")
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -20,5 +33,5 @@ def schedule(group):
     return render_template('schedule.html')
 
 
-app.run(debug=False, port=80, host="0.0.0.0")
-# app.run(debug=True, port=5000)
+if __name__ == '__main__':
+    app.run()
