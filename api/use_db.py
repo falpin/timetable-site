@@ -27,6 +27,7 @@ def create_groups():
         time_add TEXT DEFAULT CURRENT_TIMESTAMP,
         status TEXT DEFAULT "active"
     )""")
+    print("Группы созданы")
 
 def create_group(group):
     SQL_request(f"""CREATE TABLE IF NOT EXISTS {group} (
