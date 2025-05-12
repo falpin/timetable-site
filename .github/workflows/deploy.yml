@@ -8,6 +8,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Add server to known_hosts
         run: |
           mkdir -p ~/.ssh
@@ -19,4 +22,4 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          script: ${{ secrets.DEPLOY_SCRIPT_PATH }}
+          script: ${{ secrets.DEPLOY_SCRIPT_PATH }}/${{ github.event.repository.name.replace('.git', '') }}.sh
