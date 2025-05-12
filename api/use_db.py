@@ -1,7 +1,7 @@
 import sqlite3
 
 DB_NAME = 'database.db'
-DB_PATH = f"{DB_NAME}"
+DB_PATH = f"/var/www/timetable.falpin.ru/{DB_NAME}"
 
 def SQL_request(request, params=(), all_data=None):  # Выполнение SQL-запросов
     connect = sqlite3.connect(DB_PATH)
